@@ -2,7 +2,7 @@ define(['jquery', 'base/js/namespace', 'base/js/utils'], function ($, Jupyter, u
     "use strict";
 
     function submit_example() {
-        var url = utils.url_join_encode(
+        var url = utils.url_path_join(
             utils.get_body_data("baseUrl") +
             '/examples/submit'
         ) + '?example_id=' +

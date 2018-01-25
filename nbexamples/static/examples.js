@@ -86,7 +86,7 @@ define([
             success : $.proxy(this.load_list_success, this),
             error : utils.log_ajax_error,
         };
-        var url = utils.url_join_encode(this.base_url, 'examples');
+        var url = utils.url_path_join(this.base_url, 'examples');
         $.ajax(url, settings);
     };
 
@@ -166,7 +166,7 @@ define([
         var btns = $('<div/>').addClass('item-buttons pull-right');
         if (this.data.owned & (this.data.category == 'unreviewed')) {
             btns.append($('<a/>')
-                .attr("href", utils.url_join_encode(this.base_url, "examples/delete") +
+                .attr("href", utils.url_path_join(this.base_url, "examples/delete") +
                     "?example_id=" +
                     encodeURIComponent(this.data.filepath))
                 .addClass("btn btn-danger btn-xs")
@@ -175,7 +175,7 @@ define([
         }
         btns.append($('<a/>')
             .attr("href",
-                utils.url_join_encode(this.base_url, "examples/preview") +
+                utils.url_path_join(this.base_url, "examples/preview") +
                 "?example_id=" +
                 encodeURIComponent(this.data.filepath))
             .addClass("btn btn-info btn-xs")
